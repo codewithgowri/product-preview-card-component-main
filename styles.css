@@ -1,0 +1,120 @@
+:root{
+  --clr-primary-cyan:hsl(158, 36%, 37%);
+  --clr-primary-cyan-bold:hsl(158, 36%, 20%);
+  --clr-secondary-cream:hsl(30, 38%, 92%);
+  --clr-neutral-blue-900:hsl(212, 21%, 14%);
+  --clr-neutral-blue-400:hsl(228, 12%, 48%);
+  --clr-neutral-white:hsl(0, 0%, 100%);
+  --ff-monterrat:'Montserrat', sans-serif;
+  --ff-fraunces:'Fraunces', serif;
+  --fw-bold:700;
+  --fw-regular:500;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+body{
+  font-family: var(--ff-monterrat);
+  font-weight: var(--fw-regular);
+  background-color: var(--clr-secondary-cream);
+  margin: 1rem;
+  /* for this project only  */
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+
+}
+.flex-group{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.product{
+  --content-padding:1.5rem;
+  --big-fonts:2rem;
+  background-color: var(--clr-neutral-white);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+.product__content{
+  padding: var(--content-padding);
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  display: grid;
+  gap: 1rem;
+color: var(--clr-neutral-blue-400);
+font-size: 0.875rem;
+  /* display: grid;
+  gap: 1rem; */
+}
+@media screen and (min-width:600px){
+  .product{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.product__category{
+  color: var(--clr-neutral-blue-400);
+  letter-spacing: 4px;
+}
+.product__title{
+  line-height: 2rem;
+  font-size: var(--big-fonts);
+  font-family: var(--ff-fraunces);
+  color: var(--clr-neutral-blue-900);
+}
+.price{
+  font-size: var(--big-fonts);
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-fraunces);
+  color: var(--clr-primary-cyan);
+}
+.original-price{
+  text-decoration: line-through;
+}
+.btn{
+  background-color: var(--clr-primary-cyan);
+  color: var(--clr-neutral-white);
+  padding: .75rem 0;
+  border-radius: .5em;
+  outline: none;
+  border:none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .75em;
+  transition: background-color 1s;
+}
+.btn:is(:hover,:focus){
+background-color: var(--clr-primary-cyan-bold);
+}
+
